@@ -13,6 +13,11 @@
 		BC7EC2F12989B0190017B7B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7EC2F02989B0190017B7B4 /* Assets.xcassets */; };
 		BC7EC2F42989B0190017B7B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC7EC2F22989B0190017B7B4 /* LaunchScreen.storyboard */; };
 		BC7EC2FF2989B0190017B7B4 /* RickAndMortySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2FE2989B0190017B7B4 /* RickAndMortySwiftTests.swift */; };
+		BC7EC3372989BC4E0017B7B4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC3362989BC4E0017B7B4 /* Coordinator.swift */; };
+		BC7EC3392989BED70017B7B4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC3382989BED70017B7B4 /* MainCoordinator.swift */; };
+		BC7EC33B2989BF270017B7B4 /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC33A2989BF270017B7B4 /* MainFactory.swift */; };
+		BC7EC33D2989C26A0017B7B4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC33C2989C26A0017B7B4 /* HomeCoordinator.swift */; };
+		BC7EC33F2989C29C0017B7B4 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC33E2989C29C0017B7B4 /* HomeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,11 @@
 		BC7EC2F52989B0190017B7B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC7EC2FA2989B0190017B7B4 /* RickAndMortySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7EC2FE2989B0190017B7B4 /* RickAndMortySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortySwiftTests.swift; sourceTree = "<group>"; };
+		BC7EC3362989BC4E0017B7B4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BC7EC3382989BED70017B7B4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		BC7EC33A2989BF270017B7B4 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		BC7EC33C2989C26A0017B7B4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		BC7EC33E2989C29C0017B7B4 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +311,8 @@
 			children = (
 				BC7EC3322989B6990017B7B4 /* CoordinatorScreen */,
 				BC7EC3312989B6920017B7B4 /* Utils */,
+				BC7EC3362989BC4E0017B7B4 /* Coordinator.swift */,
+				BC7EC3382989BED70017B7B4 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -315,6 +327,7 @@
 		BC7EC3322989B6990017B7B4 /* CoordinatorScreen */ = {
 			isa = PBXGroup;
 			children = (
+				BC7EC33C2989C26A0017B7B4 /* HomeCoordinator.swift */,
 			);
 			path = CoordinatorScreen;
 			sourceTree = "<group>";
@@ -322,6 +335,8 @@
 		BC7EC3332989B6AB0017B7B4 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				BC7EC33A2989BF270017B7B4 /* MainFactory.swift */,
+				BC7EC33E2989C29C0017B7B4 /* HomeFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -442,8 +457,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7EC3372989BC4E0017B7B4 /* Coordinator.swift in Sources */,
+				BC7EC33B2989BF270017B7B4 /* MainFactory.swift in Sources */,
 				BC7EC2EC2989B0160017B7B4 /* HomeMenuViewController.swift in Sources */,
+				BC7EC3392989BED70017B7B4 /* MainCoordinator.swift in Sources */,
 				BC7EC2E82989B0160017B7B4 /* AppDelegate.swift in Sources */,
+				BC7EC33F2989C29C0017B7B4 /* HomeFactory.swift in Sources */,
+				BC7EC33D2989C26A0017B7B4 /* HomeCoordinator.swift in Sources */,
 				BC7EC2EA2989B0160017B7B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,8 +623,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortySwift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "RAM API";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -631,8 +652,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortySwift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "RAM API";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
