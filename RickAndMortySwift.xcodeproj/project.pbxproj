@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC362E47298AC09900710190 /* ItemHomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */; };
+		BC362E49298AC72400710190 /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E48298AC72400710190 /* UIView+Contraints.swift */; };
+		BC362E4B298ACB9500710190 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E4A298ACB9500710190 /* Reusable.swift */; };
+		BC362E51298AD31F00710190 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E50298AD31F00710190 /* MenuRepository.swift */; };
 		BC7EC2E82989B0160017B7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2E72989B0160017B7B4 /* AppDelegate.swift */; };
 		BC7EC2EA2989B0160017B7B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2E92989B0160017B7B4 /* SceneDelegate.swift */; };
 		BC7EC2EC2989B0160017B7B4 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHomeMenuCell.swift; sourceTree = "<group>"; };
+		BC362E48298AC72400710190 /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
+		BC362E4A298ACB9500710190 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		BC362E50298AD31F00710190 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
 		BC7EC2E42989B0160017B7B4 /* RickAndMortySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7EC2E72989B0160017B7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7EC2E92989B0160017B7B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +73,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC362E4C298AD2EB00710190 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E4D298AD2EE00710190 /* InterfaceRepository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BC362E4D298AD2EE00710190 /* InterfaceRepository */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E50298AD31F00710190 /* MenuRepository.swift */,
+			);
+			path = InterfaceRepository;
+			sourceTree = "<group>";
+		};
+		BC362E4E298AD2FE00710190 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */,
+				BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BC362E4F298AD30500710190 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		BC7EC2DB2989B0160017B7B4 = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +148,9 @@
 		BC7EC3172989B3ED0017B7B4 /* HomeMenu */ = {
 			isa = PBXGroup;
 			children = (
-				BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */,
+				BC362E4C298AD2EB00710190 /* Domain */,
+				BC362E4F298AD30500710190 /* Data */,
+				BC362E4E298AD2FE00710190 /* Presentation */,
 			);
 			path = HomeMenu;
 			sourceTree = "<group>";
@@ -235,6 +277,7 @@
 		BC7EC3262989B5FE0017B7B4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BC362E48298AC72400710190 /* UIView+Contraints.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -288,6 +331,7 @@
 		BC7EC32D2989B6330017B7B4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BC362E4A298ACB9500710190 /* Reusable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -458,12 +502,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7EC3372989BC4E0017B7B4 /* Coordinator.swift in Sources */,
+				BC362E4B298ACB9500710190 /* Reusable.swift in Sources */,
 				BC7EC33B2989BF270017B7B4 /* MainFactory.swift in Sources */,
 				BC7EC2EC2989B0160017B7B4 /* HomeMenuViewController.swift in Sources */,
+				BC362E51298AD31F00710190 /* MenuRepository.swift in Sources */,
+				BC362E49298AC72400710190 /* UIView+Contraints.swift in Sources */,
 				BC7EC3392989BED70017B7B4 /* MainCoordinator.swift in Sources */,
 				BC7EC2E82989B0160017B7B4 /* AppDelegate.swift in Sources */,
 				BC7EC33F2989C29C0017B7B4 /* HomeFactory.swift in Sources */,
 				BC7EC33D2989C26A0017B7B4 /* HomeCoordinator.swift in Sources */,
+				BC362E47298AC09900710190 /* ItemHomeMenuCell.swift in Sources */,
 				BC7EC2EA2989B0160017B7B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,8 +670,7 @@
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortySwift/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "RAM API";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick And Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -651,8 +698,7 @@
 				DEVELOPMENT_TEAM = 5S22W76BBZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RickAndMortySwift/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "RAM API";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick And Morty";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

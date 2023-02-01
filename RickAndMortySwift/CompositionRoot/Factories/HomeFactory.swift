@@ -13,6 +13,19 @@ protocol HomeFactory {
 
 struct HomeFactoryImplementation: HomeFactory {
     func makeModule() -> UIViewController {
-        HomeMenuViewController()
+        let homeViewController = HomeMenuViewController(collectionViewLayout: makeLayout())
+        homeViewController.title = "Rick And Morty"
+        return homeViewController
+    }
+    
+    private func makeLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        let layoutWidth = (UIScreen.main.bounds.width - 20) / 2
+        let layoutHeight = (UIScreen.main.bounds.height - 20) / 2
+        layout.itemSize = CGSize(width: layoutWidth, height: layoutWidth)
+        layout.minimumLineSpacing = .zero
+        layout.minimumInteritemSpacing = .zero
+        layout.sectionInset = UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
+        return layout
     }
 }
