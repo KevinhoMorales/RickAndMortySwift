@@ -5,6 +5,7 @@
 //  Created by Kevin Morales on 1/31/23.
 //
 
+import Combine
 import UIKit
 
 protocol HomeFactory {
@@ -13,12 +14,18 @@ protocol HomeFactory {
 
 struct HomeFactoryImplementation: HomeFactory {
     func makeModule() -> UIViewController {
-        let homeViewController = HomeMenuViewController(collectionViewLayout: makeLayout())
+        let menuRepository = MenuRepositoryImplementation()
+        let loadMenuUseCase = LoadMenuUserCaseImplementation(menuRepository: menuRepository)
+        let state = PassthroughSubject<StateController, Never>()
+        let homeViewModel = HomeMenuViewModelImplementation(state: state,
+                                                            loadMenuUseCase: loadMenuUseCase)
+        let homeViewController = HomeMenuViewController(viewModel: homeViewModel,
+                                                        layout: makeLayout())
         homeViewController.title = "Rick And Morty"
         return homeViewController
     }
     
-    private func makeLayout() -> UICollectionViewLayout {
+    private func makeLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let layoutWidth = (UIScreen.main.bounds.width - 20) / 2
         let layoutHeight = (UIScreen.main.bounds.height - 20) / 2

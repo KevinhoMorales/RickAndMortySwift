@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC362E47298AC09900710190 /* ItemHomeMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */; };
+		BC362E47298AC09900710190 /* HomeMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E46298AC09900710190 /* HomeMenuTableViewCell.swift */; };
 		BC362E49298AC72400710190 /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E48298AC72400710190 /* UIView+Contraints.swift */; };
 		BC362E4B298ACB9500710190 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E4A298ACB9500710190 /* Reusable.swift */; };
 		BC362E51298AD31F00710190 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E50298AD31F00710190 /* MenuRepository.swift */; };
+		BC362E54298AD5D000710190 /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E53298AD5D000710190 /* MenuModel.swift */; };
+		BC362E57298AD63500710190 /* MenuRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E56298AD63500710190 /* MenuRepositoryImplementation.swift */; };
+		BC362E5A298AD68900710190 /* LoadMenuUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E59298AD68900710190 /* LoadMenuUseCase.swift */; };
+		BC362E5F298AD78500710190 /* HomeMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E5E298AD78500710190 /* HomeMenuViewModel.swift */; };
+		BC362E62298AD85900710190 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E61298AD85900710190 /* StateController.swift */; };
+		BC362E64298AD8F000710190 /* HomeMenuTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC362E63298AD8F000710190 /* HomeMenuTableViewCellViewModel.swift */; };
 		BC7EC2E82989B0160017B7B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2E72989B0160017B7B4 /* AppDelegate.swift */; };
 		BC7EC2EA2989B0160017B7B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2E92989B0160017B7B4 /* SceneDelegate.swift */; };
 		BC7EC2EC2989B0160017B7B4 /* HomeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */; };
@@ -35,10 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHomeMenuCell.swift; sourceTree = "<group>"; };
+		BC362E46298AC09900710190 /* HomeMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuTableViewCell.swift; sourceTree = "<group>"; };
 		BC362E48298AC72400710190 /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
 		BC362E4A298ACB9500710190 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		BC362E50298AD31F00710190 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
+		BC362E53298AD5D000710190 /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		BC362E56298AD63500710190 /* MenuRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepositoryImplementation.swift; sourceTree = "<group>"; };
+		BC362E59298AD68900710190 /* LoadMenuUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMenuUseCase.swift; sourceTree = "<group>"; };
+		BC362E5E298AD78500710190 /* HomeMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModel.swift; sourceTree = "<group>"; };
+		BC362E61298AD85900710190 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		BC362E63298AD8F000710190 /* HomeMenuTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		BC7EC2E42989B0160017B7B4 /* RickAndMortySwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortySwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7EC2E72989B0160017B7B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC7EC2E92989B0160017B7B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +88,8 @@
 		BC362E4C298AD2EB00710190 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BC362E58298AD67900710190 /* UseCase */,
+				BC362E52298AD5C400710190 /* Entities */,
 				BC362E4D298AD2EE00710190 /* InterfaceRepository */,
 			);
 			path = Domain;
@@ -92,8 +106,9 @@
 		BC362E4E298AD2FE00710190 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */,
-				BC362E46298AC09900710190 /* ItemHomeMenuCell.swift */,
+				BC362E5B298AD75400710190 /* Controller */,
+				BC362E5C298AD75900710190 /* Cell */,
+				BC362E61298AD85900710190 /* StateController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -101,8 +116,51 @@
 		BC362E4F298AD30500710190 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BC362E55298AD62000710190 /* Repositories */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		BC362E52298AD5C400710190 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E53298AD5D000710190 /* MenuModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BC362E55298AD62000710190 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E56298AD63500710190 /* MenuRepositoryImplementation.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		BC362E58298AD67900710190 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E59298AD68900710190 /* LoadMenuUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		BC362E5B298AD75400710190 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC7EC2EB2989B0160017B7B4 /* HomeMenuViewController.swift */,
+				BC362E5E298AD78500710190 /* HomeMenuViewModel.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC362E5C298AD75900710190 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC362E46298AC09900710190 /* HomeMenuTableViewCell.swift */,
+				BC362E63298AD8F000710190 /* HomeMenuTableViewCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BC7EC2DB2989B0160017B7B4 = {
@@ -503,15 +561,21 @@
 			files = (
 				BC7EC3372989BC4E0017B7B4 /* Coordinator.swift in Sources */,
 				BC362E4B298ACB9500710190 /* Reusable.swift in Sources */,
+				BC362E5A298AD68900710190 /* LoadMenuUseCase.swift in Sources */,
+				BC362E57298AD63500710190 /* MenuRepositoryImplementation.swift in Sources */,
 				BC7EC33B2989BF270017B7B4 /* MainFactory.swift in Sources */,
 				BC7EC2EC2989B0160017B7B4 /* HomeMenuViewController.swift in Sources */,
+				BC362E64298AD8F000710190 /* HomeMenuTableViewCellViewModel.swift in Sources */,
 				BC362E51298AD31F00710190 /* MenuRepository.swift in Sources */,
+				BC362E62298AD85900710190 /* StateController.swift in Sources */,
 				BC362E49298AC72400710190 /* UIView+Contraints.swift in Sources */,
 				BC7EC3392989BED70017B7B4 /* MainCoordinator.swift in Sources */,
 				BC7EC2E82989B0160017B7B4 /* AppDelegate.swift in Sources */,
 				BC7EC33F2989C29C0017B7B4 /* HomeFactory.swift in Sources */,
+				BC362E54298AD5D000710190 /* MenuModel.swift in Sources */,
+				BC362E5F298AD78500710190 /* HomeMenuViewModel.swift in Sources */,
 				BC7EC33D2989C26A0017B7B4 /* HomeCoordinator.swift in Sources */,
-				BC362E47298AC09900710190 /* ItemHomeMenuCell.swift in Sources */,
+				BC362E47298AC09900710190 /* HomeMenuTableViewCell.swift in Sources */,
 				BC7EC2EA2989B0160017B7B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

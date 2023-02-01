@@ -1,5 +1,5 @@
 //
-//  ItemHomeMenuCell.swift
+//  HomeMenuTableViewCell.swift
 //  RickAndMortySwift
 //
 //  Created by Kevin Morales on 2/1/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ItemHomeMenuCell: UICollectionViewCell {
+final class HomeMenuTableViewCell: UICollectionViewCell {
     // MARK: - Public properties
     
     // MARK: - Private properties
@@ -27,10 +27,10 @@ final class ItemHomeMenuCell: UICollectionViewCell {
         return label
     }()
     
-    private let characterImage: UIImageView = {
+    private let categoryMenuImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "default")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -47,8 +47,8 @@ final class ItemHomeMenuCell: UICollectionViewCell {
     private func setUpUI() {
         addSubview(mainContainer)
         mainContainer.fillSuperView(widthPadding: 10)
-        mainContainer.addSubview(characterImage)
-        characterImage.fillSuperView()
+        mainContainer.addSubview(categoryMenuImageView)
+        categoryMenuImageView.fillSuperView()
         setUpGradientForTitle()
         mainContainer.addSubview(titleCategoryLabel)
         titleCategoryLabel.setContraints(right: mainContainer.rightAnchor,
@@ -67,10 +67,16 @@ final class ItemHomeMenuCell: UICollectionViewCell {
         gradientMaskLayer.locations = [0.6, 0.9]
         mainContainer.layer.addSublayer(gradientMaskLayer)
     }
+    
+    func setUpData(viewModel: HomeMenuTableViewCellViewModel) {
+        titleCategoryLabel.text = viewModel.title
+        categoryMenuImageView.image = UIImage(named: viewModel.imageName)
+    }
+    
     // MARK: - Actions
 }
 
 // MARK: - Extensions here
-extension ItemHomeMenuCell: Reusable {
+extension HomeMenuTableViewCell: Reusable {
     
 }
